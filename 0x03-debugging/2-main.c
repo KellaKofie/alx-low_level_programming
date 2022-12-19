@@ -11,18 +11,13 @@ int main(void)
 	int a, b, c;
 	int largest;
 
-	a = 10;
-	b = 10;
-	c = 10;
+	a = 972;
+	b = -98;
+	c = 0;
 
 	largest = largest_number(a, b, c);
-	if (largest == 0)
-	{
-		printf("a, b and c are the same!\n");
-	}
-	else
-	{
+
 	printf("%d is the largest number\n", largest);
-	}
+
 	return (0);
 }

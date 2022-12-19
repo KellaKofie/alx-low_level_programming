@@ -1,38 +1,37 @@
 #include <stdio.h>
 
 /**
-* main - main function
-*
-* a program that prints all possible different combinations of three digits.
-*
-* Return: zero
-*/
-
-
+ * main - print 000 to 999, but only unique combinations and digits
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int digit1, digit2, digit3;
+	int first;
+	int second;
+	int third;
 
-	for (digit1 = 0; digit1 < 8; digit1++)
+	for (first = '0'; first <= '9'; first++)
 	{
-		for (digit2 = digit1 + 1; digit2 < 9; digit2++)
+		for (second = first + 1; second <= '9'; second++)
 		{
-			for (digit3 = digit2 + 1; digit3 < 10; digit3++)
+			for (third = second; third <= '9'; third++)
 			{
-				putchar((digit1 % 10) + '0');
-				putchar((digit2 % 10) + '0');
-				putchar((digit3 % 10) + '0');
-
-				if (digit1 == 7 && digit2 == 8 && digit3 == 9)
+				if (first == second || second == third || first == third)
 					continue;
+				putchar(first);
+				putchar(second);
+				putchar(third);
 
+				if (!(first == '7' && second == '8' && third == '9'))
+				{
 					putchar(',');
 					putchar(' ');
+				}
+
 			}
 		}
 	}
-
-putchar('\n');
-
-return (0);
+	putchar('\n');
+	return (0);
 }
+

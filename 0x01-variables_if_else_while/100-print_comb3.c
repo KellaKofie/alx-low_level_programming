@@ -1,34 +1,33 @@
 #include <stdio.h>
 
 /**
-* main - main function
-* Write a program that prints all possible combinations of
-* single-digit numbers.
-*
-* Return: zero
-*/
-
-
+ * main - print 00 to 99, but only unique combinations
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int digit1, digit2;
+	int firstDigit;
+	int secondDigit;
+	int offset = 0;
 
-	for (digit1 = 0; digit1 < 9; digit1++)
+	for (firstDigit = '0'; firstDigit <= '8'; firstDigit++)
 	{
-		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
+		for (secondDigit = '1' + offset; secondDigit <= '9'; secondDigit++)
 		{
-			putchar((digit1 % 10) + '0');
-			putchar((digit2 % 10) + '0');
+			if (firstDigit == secondDigit)
+				continue;
 
-		if (digit1 == 8 && digit2 == 9)
-			continue;
-
-			putchar(',');
-			putchar(' ');
+			putchar(firstDigit);
+			putchar(secondDigit);
+			if (!(firstDigit == '8' && secondDigit == '9'))
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
+		offset++;
 	}
-
 	putchar('\n');
-
 	return (0);
 }
+

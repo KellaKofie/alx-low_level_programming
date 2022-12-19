@@ -1,22 +1,19 @@
 #include <stdio.h>
 
 /**
-* main - main function
-* A program that prints the alphabet in lowercase jumping e and q,
-* Return: zero
-*/
-
+ * main - print the alphabet except q and e
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	char letter;
+	char c;
 
-	for (letter = 'a'; letter <= 'z'; letter++)
+	for (c = 'a'; c <= 'z'; c++)
 	{
-		if (letter != 'e' && letter != 'q')
-			putchar(letter);
+		if (c != 'q' && c != 'e')
+			putchar(c);
 	}
-
 	putchar('\n');
-
 	return (0);
 }
+

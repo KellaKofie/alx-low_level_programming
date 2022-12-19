@@ -3,12 +3,23 @@
 #include <time.h>
 
 /**
-* main - main function
-* The code prints out a random number and indicates if it is positive,
-* negative or zero
-* Return: void
-*/
+ * printSign - Print the sign of a given integer
+ * @number: integer to be tested
+ */
+void printSign(int number)
+{
+	if (number > 0)
+		printf("%i is positive\n", number);
+	else if (number == 0)
+		printf("%i is zero\n", number);
+	else
+		printf("%i is negative\n", number);
+}
 
+/**
+ * main - Generate random number
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
@@ -16,11 +27,6 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	if (n > 0)
-		printf("%i is positive\n", n);
-	else if (n < 0)
-		printf("%i is negative\n", n);
-	else
-		printf("%i is zero\n", n);
+	printSign(n);
 	return (0);
 }
